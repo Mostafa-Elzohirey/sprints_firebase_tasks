@@ -5,7 +5,6 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sprints_firebase_tasks/locales.dart';
 import 'package:validators/validators.dart';
-import 'home_screen.dart';
 import 'login_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -260,6 +259,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             email: emailController.text,
                             password: passwordController.text,
                           );
+
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             showDialog<void>(
