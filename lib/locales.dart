@@ -22,6 +22,8 @@ mixin AppLocale {
   static const String arabic = 'arabic';
   static const String logout = 'logout';
   static const String login = 'login';
+  static const String noAcc = 'noAcc';
+  static const String createAcc = 'createAcc';
 
   static const Map<String, dynamic> en = {
     title: 'Shopping App',
@@ -46,7 +48,9 @@ mixin AppLocale {
     entermail: 'please enter E-mail',
     enterpass: 'please enter password',
     logout: 'logout',
-    login: 'login'
+    login: 'login',
+    noAcc: "Don't have an account?",
+    createAcc:'Create Account'
   };
   static const Map<String, dynamic> ar = {
     title: 'تطبيق التسوق',
@@ -72,5 +76,7 @@ mixin AppLocale {
     enterpass: 'الرجاء ادخال كلمة مرور',
     logout: 'تسجيل جروج',
     login: 'تسجيل دخول',
+    noAcc:'لا تمتلك حساب؟',
+    createAcc:'أنشأ حساب'
   };
 }

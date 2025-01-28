@@ -35,7 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
     final deviceWidth = MediaQuery.of(context).size.width;
     final deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      drawer: Drawer(
+      endDrawer: Drawer(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -259,7 +259,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             email: emailController.text,
                             password: passwordController.text,
                           );
-
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             showDialog<void>(

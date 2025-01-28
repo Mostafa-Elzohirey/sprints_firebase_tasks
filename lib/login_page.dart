@@ -4,7 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sprints_firebase_tasks/locales.dart';
-import 'package:validators/validators.dart';
+import 'package:sprints_firebase_tasks/sign_up_page.dart';
 import 'home_screen.dart';
 
 class LoginPage extends StatefulWidget {
@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         title: Text(
-          AppLocale.signUp.getString(context),
+          AppLocale.login.getString(context),
         ),
         centerTitle: true,
       ),
@@ -152,9 +152,26 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: deviceHeight * 0.02,
                 ),
-                Text(
-                  AppLocale.conPassword.getString(context),
-                  style: TextStyle(fontSize: 20),
+                Row(
+                  children: [
+                    Text(
+                      AppLocale.noAcc.getString(context),
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        navToSignUp(context);
+                      },
+                      child: Row(
+                        children: [
+                          Text(
+                            AppLocale.createAcc.getString(context),
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: deviceHeight * 0.02,
@@ -247,6 +264,19 @@ class _LoginPageState extends State<LoginPage> {
         type: PageTransitionType.fade,
         duration: 1.seconds,
         child: HomeScreen(
+          localization: widget.localization,
+        ),
+      ),
+    );
+  }
+
+  void navToSignUp(context) {
+    Navigator.push(
+      context,
+      PageTransition(
+        type: PageTransitionType.fade,
+        duration: 1.seconds,
+        child: SignUpPage(
           localization: widget.localization,
         ),
       ),
