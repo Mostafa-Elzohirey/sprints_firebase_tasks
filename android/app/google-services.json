@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "842181473067",
-    "project_id": "sprints-firebase",
-    "storage_bucket": "sprints-firebase.firebasestorage.app"
+    "project_number": "267920119442",
+    "project_id": "sprints-project",
+    "storage_bucket": "sprints-project.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:842181473067:android:52aa73306a4bfc28c38b6e",
+        "mobilesdk_app_id": "1:267920119442:android:db30fe5b4361268cfc784b",
         "android_client_info": {
           "package_name": "com.example.sprints_firebase_tasks"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD6TCxNWfdrNuQj2hAgKIlAQ9ztZQB9gqI"
+          "current_key": "AIzaSyD1cBbodYKKdeH7nKzU3mO5E1tfi5JwwIk"
         }
       ],
       "services": {

@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:sprints_firebase_tasks/login_page.dart';
+import 'package:sprints_firebase_tasks/display_info/submit_data.dart';
 
-import 'firebase_options.dart';
-import 'locales.dart';
+import 'package:sprints_firebase_tasks/firebase_options.dart';
+import 'shopping app/locales.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Firebase App',
       supportedLocales: localization.supportedLocales,
       localizationsDelegates: localization.localizationsDelegates,
-      home: LoginPage(localization: localization),
+      home: SubmitData(),
     );
   }
 }

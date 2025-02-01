@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sprints_firebase_tasks/locales.dart';
-import 'package:sprints_firebase_tasks/sign_up_page.dart';
 
+import 'locales.dart';
 import 'login_page.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sprints_firebase_tasks/locales.dart';
-import 'package:sprints_firebase_tasks/sign_up_page.dart';
+import 'package:sprints_firebase_tasks/shopping%20app/sign_up_page.dart';
+
 import 'home_screen.dart';
+import 'locales.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.localization});

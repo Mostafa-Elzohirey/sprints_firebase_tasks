@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,19 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD6TCxNWfdrNuQj2hAgKIlAQ9ztZQB9gqI',
-    appId: '1:842181473067:android:52aa73306a4bfc28c38b6e',
-    messagingSenderId: '842181473067',
-    projectId: 'sprints-firebase',
-    storageBucket: 'sprints-firebase.firebasestorage.app',
+    apiKey: 'AIzaSyD1cBbodYKKdeH7nKzU3mO5E1tfi5JwwIk',
+    appId: '1:267920119442:android:db30fe5b4361268cfc784b',
+    messagingSenderId: '267920119442',
+    projectId: 'sprints-project',
+    storageBucket: 'sprints-project.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBfwchvsnND3QpdtW9Ire6xT2PdCILF0J8',
-    appId: '1:842181473067:ios:585006897cee2b04c38b6e',
-    messagingSenderId: '842181473067',
-    projectId: 'sprints-firebase',
-    storageBucket: 'sprints-firebase.firebasestorage.app',
+    apiKey: 'AIzaSyBRYsAlwvCEKFUeWafw2OdEn-UJA_6Snng',
+    appId: '1:267920119442:ios:a9276c2b0d441836fc784b',
+    messagingSenderId: '267920119442',
+    projectId: 'sprints-project',
+    storageBucket: 'sprints-project.firebasestorage.app',
     iosBundleId: 'com.example.sprintsFirebaseTasks',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDaN5vEperMQ95dG06xe6EbGkAs1xqao6g',
+    appId: '1:267920119442:web:a9a7aa5071a7cb4efc784b',
+    messagingSenderId: '267920119442',
+    projectId: 'sprints-project',
+    authDomain: 'sprints-project.firebaseapp.com',
+    storageBucket: 'sprints-project.firebasestorage.app',
+    measurementId: 'G-X6NWWNQW2M',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBRYsAlwvCEKFUeWafw2OdEn-UJA_6Snng',
+    appId: '1:267920119442:ios:a9276c2b0d441836fc784b',
+    messagingSenderId: '267920119442',
+    projectId: 'sprints-project',
+    storageBucket: 'sprints-project.firebasestorage.app',
+    iosBundleId: 'com.example.sprintsFirebaseTasks',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDaN5vEperMQ95dG06xe6EbGkAs1xqao6g',
+    appId: '1:267920119442:web:e36768751c1df28afc784b',
+    messagingSenderId: '267920119442',
+    projectId: 'sprints-project',
+    authDomain: 'sprints-project.firebaseapp.com',
+    storageBucket: 'sprints-project.firebasestorage.app',
+    measurementId: 'G-NEYFHFZHSJ',
+  );
+
 }

@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:sprints_firebase_tasks/locales.dart';
+import 'package:sprints_firebase_tasks/models/user_model.dart';
+import 'package:sprints_firebase_tasks/services/firestore_services.dart';
 import 'package:validators/validators.dart';
+import 'locales.dart';
 import 'login_page.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -17,6 +19,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
 
   final emailController = TextEditingController();
@@ -254,8 +257,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         return;
                       } else {
                         try {
-                          final credential = await FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
+                          final credential =
+                              await auth.createUserWithEmailAndPassword(
                             email: emailController.text,
                             password: passwordController.text,
                           );
@@ -372,6 +375,17 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+  }
+
+  void saveUserData() {
+    final id = auth.currentUser!.uid;
+    final user = UserModel(
+      id: id,
+      email: emailController.text,
+      name: usernameController.text,
+      password: passwordController.text,
+    );
+    FirestoreServices.addUser(user);
   }
 
   void showLanguageBottomSheet(FlutterLocalization localization) {
